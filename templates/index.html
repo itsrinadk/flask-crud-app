@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ user }}</h2>
+        <a class="logout" href="/logout">Logout</a>
+
+        <h3>Add Item</h3>
+        <form method="POST" action="/add">
+            <input type="text" name="title" placeholder="Title" required>
+            <input type="text" name="content" placeholder="Content" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <h3>Items</h3>
+        <ul>
+            {% for item in items %}
+            <li>
+                <form method="POST" action="/update/{{ item.id }}">
+                    <input type="text" name="title" value="{{ item.title }}">
+                    <input type="text" name="content" value="{{ item.content }}">
+                    <button type="submit">Update</button>
+                </form>
+                <a class="delete" href="/delete/{{ item.id }}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

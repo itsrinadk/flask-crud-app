@@ -1,0 +1,15 @@
+{
+    "users": [
+        {
+            "username": "rinadoka04@gmail.com",
+            "password": "$2b$12$nfLOajBvwld98n/.J/x9luvvG9ZnCWysnVJShwZyv0F/23cGIFL3q"
+        }
+    ],
+    "items": [
+        {
+            "id": 1,
+            "title": "idk",
+            "content": "idk"
+        }
+    ]
+}
